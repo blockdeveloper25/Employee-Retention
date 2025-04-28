@@ -1,0 +1,14 @@
+Flask
+Flask-Cors
+matplotlib
+numpy
+pandas
+scikit-learn
+kneed
+xgboost
+Flask-MonitoringDashboard
+Jinja2
+Werkzeug
+itsdangerous==1.1.0
+certifi==2019.11.28 #Certifi is a carefully curated collection of Root Certificates for validating the trustworthiness of SSL certificates while verifying the identity of TLS hosts.
+MarkupSafe==1.1.1 #MarkupSafe implements a text object that escapes characters so it is safe to use in HTML and XML. Characters that have special meanings are replaced so that they display as the actual characters. This mitigates injection attacks, meaning untrusted user input can safely be displayed on a page.
