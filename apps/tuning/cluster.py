@@ -1,4 +1,6 @@
 from apps.core.logger import Logger
+import matplotlib
+matplotlib.use('Agg')  # Use non-GUI backend
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 from kneed import KneeLocator
@@ -59,11 +61,12 @@ class KMeansCluster:
             plt.title('The Elbow Method')
             plt.xlabel('Number of clusters')
             plt.ylabel('WCSS')
-            #plt.show()
+        
             plt.savefig('apps/models/kmeans_elbow.png') # saving the elbow plot locally
             # finding the value of the optimum cluster programmatically
             self.kn = KneeLocator(range(1, 11), wcss, curve='convex', direction='decreasing')
-            self.logger.info('The optimum number of clusters is: '+str(self.kn.knee))
+            self.logger.info('Successfully created ' + str(self.kn.knee) + ' clusters.')
+
             self.logger.info('End of elbow plotting...')
             return self.kn.knee
 

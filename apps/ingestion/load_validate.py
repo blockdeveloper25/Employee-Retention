@@ -150,7 +150,7 @@ class LoadValidate:
             only_files = [f for f in listdir(self.data_path)]
             for file in only_files:
                 csv = pd.read_csv(self.data_path + "/" + file)
-                csv.fillna('NULL', inplace=True)
+                csv = csv.astype(str).fillna('NULL')
                 csv.to_csv(self.data_path + "/" + file, index=None, header=True)
                 self.logger.info('%s: File Transformed successfully!!' % file)
             self.logger.info('End of Replacing Missing Values with NULL...')

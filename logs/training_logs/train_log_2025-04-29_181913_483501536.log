@@ -1,0 +1,44 @@
+2025-04-29 18:19:13,691 : INFO : Start of Training
+2025-04-29 18:19:13,691 : INFO : Run_id:2025-04-29_181913_483501536
+2025-04-29 18:19:13,691 : INFO : Start of Data Load, validation and transformation
+2025-04-29 18:19:13,691 : INFO : Start of Archiving Old Rejected Files...
+2025-04-29 18:19:13,691 : INFO : End of Archiving Old Rejected Files...
+2025-04-29 18:19:13,691 : INFO : Start of Archiving Old Validated Files...
+2025-04-29 18:19:13,692 : INFO : End of Archiving Old Validated Files...
+2025-04-29 18:19:13,692 : INFO : Start of Archiving Old Processed Files...
+2025-04-29 18:19:13,692 : INFO : End of Archiving Old Processed Files...
+2025-04-29 18:19:13,692 : INFO : Start of Archiving Old Result Files...
+2025-04-29 18:19:13,692 : INFO : End of Archiving Old Result Files...
+2025-04-29 18:19:13,692 : INFO : Start of Reading values From Schema...
+2025-04-29 18:19:13,692 : ERROR : Exception raised while Reading values From Schema: [Errno 2] No such file or directory: 'apps/database/schema_train.json'
+Traceback (most recent call last):
+  File "/Users/sujairibrahim/ML-Projects/Employee Retention/apps/ingestion/load_validate.py", line 53, in values_from_schema
+    with open('apps/database/'+schema_file+'.json', 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'apps/database/schema_train.json'
+2025-04-29 18:19:13,692 : ERROR : Unsuccessful End of Data Load, validation and transformation
+Traceback (most recent call last):
+  File "/Users/sujairibrahim/ML-Projects/Employee Retention/apps/ingestion/load_validate.py", line 286, in validate_trainset
+    column_names, number_of_columns = self.values_from_schema('schema_train')
+  File "/Users/sujairibrahim/ML-Projects/Employee Retention/apps/ingestion/load_validate.py", line 67, in values_from_schema
+    raise e
+  File "/Users/sujairibrahim/ML-Projects/Employee Retention/apps/ingestion/load_validate.py", line 53, in values_from_schema
+    with open('apps/database/'+schema_file+'.json', 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'apps/database/schema_train.json'
+2025-04-29 18:19:13,692 : ERROR : Unsuccessful End of Training
+Traceback (most recent call last):
+  File "/Users/sujairibrahim/ML-Projects/Employee Retention/apps/ingestion/load_validate.py", line 286, in validate_trainset
+    column_names, number_of_columns = self.values_from_schema('schema_train')
+  File "/Users/sujairibrahim/ML-Projects/Employee Retention/apps/ingestion/load_validate.py", line 67, in values_from_schema
+    raise e
+  File "/Users/sujairibrahim/ML-Projects/Employee Retention/apps/ingestion/load_validate.py", line 53, in values_from_schema
+    with open('apps/database/'+schema_file+'.json', 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'apps/database/schema_train.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sujairibrahim/ML-Projects/Employee Retention/apps/training/train_model.py", line 59, in training_model
+    self.loadValidate.validate_trainset()
+  File "/Users/sujairibrahim/ML-Projects/Employee Retention/apps/ingestion/load_validate.py", line 304, in validate_trainset
+    raise Exception
+Exception

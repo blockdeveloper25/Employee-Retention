@@ -52,7 +52,7 @@ class ModelTuner:
             self.logger.info('Start of finding best params for randomforest algo...')
             # initializing with different combination of parameters
             self.param_grid = {"n_estimators": [10, 50, 100, 130], "criterion": ['gini', 'entropy'],
-                               "max_depth": range(2, 4, 1), "max_features": ['auto', 'log2']}
+                               "max_depth": range(2, 4, 1), "max_features": ['sqrt', 'log2']}
 
             #Creating an object of the Grid Search class
             self.grid = GridSearchCV(estimator=self.rfc, param_grid=self.param_grid, cv=5)

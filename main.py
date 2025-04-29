@@ -57,15 +57,11 @@ def training_route_client():
         trainModel.training_model()
         return Response("Training successfull! and its RunID is : "+str(run_id))
     except ValueError:
-        return Response("Error Occurred! %s" % ValueError)
+        return Response("Error Occurred! %s" % ValueError, status=400)
     except KeyError:
-        return Response("Error Occurred! %s" % KeyError)
+        return Response("Error Occurred! %s" % KeyError, status=401)
     except Exception as e:
         return Response("Error Occurred! %s" % e)
 
-if __name__ == "__main__":
-    #app.run(debug=True)
-    host = '0.0.0.0'
-    port = 5000
-    httpd = simple_server.make_server(host, port, app)
-    httpd.serve_forever()
+if __name__ == '__main__':
+    app.run(port=5001, debug=True)
