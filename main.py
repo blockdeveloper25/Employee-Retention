@@ -13,7 +13,7 @@ from apps.core.config import Config
 *
 * filename:       main.py
 * version:        1.0
-* author:         CODESTUDIO
+* author:         Sujair
 * creation date:  28-APRIL-2025
 *
 * change history:
